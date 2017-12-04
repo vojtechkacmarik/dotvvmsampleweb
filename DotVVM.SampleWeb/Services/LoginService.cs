@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using DotVVM.SampleWeb.DTO;
+using DotVVM.SampleWeb.Dto;
 using DotVVM.SampleWeb.Model;
 using Microsoft.AspNetCore.Identity;
 

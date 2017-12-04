@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DotVVM.Framework.Controls;
-using DotVVM.SampleWeb.DTO;
+using DotVVM.SampleWeb.Dto;
 using DotVVM.SampleWeb.Model;
 
 namespace DotVVM.SampleWeb.Services

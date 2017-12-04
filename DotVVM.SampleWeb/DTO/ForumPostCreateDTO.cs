@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DotVVM.SampleWeb.DTO
+namespace DotVVM.SampleWeb.Dto
 {
     public class ForumPostCreateDTO
     {

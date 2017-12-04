@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.Runtime.Filters;
-using DotVVM.SampleWeb.DTO;
+using DotVVM.SampleWeb.Dto;
 using DotVVM.SampleWeb.Services;
 
 namespace DotVVM.SampleWeb.ViewModels
@@ -18,7 +18,10 @@ namespace DotVVM.SampleWeb.ViewModels
 
         public GridViewDataSet<ForumPostDTO> ForumPosts { get; set; } = new GridViewDataSet<ForumPostDTO>()
         {
-            PageSize = 20
+            PagingOptions =
+            {
+                PageSize = 10
+            }
         };
 
         public ForumPostCreateDTO NewPost { get; set; } = new ForumPostCreateDTO();

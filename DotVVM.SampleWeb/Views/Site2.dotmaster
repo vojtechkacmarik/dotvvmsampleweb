@@ -1,0 +1,52 @@
+﻿@viewModel DotVVM.SampleWeb.ViewModels.SiteViewModel, DotVVM.SampleWeb
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DotVVM Sample Web Application</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">DotVVM Sample Web Application - Order Management</a>
+                </div>
+                <div class="collapse navbar-collapse" ID="menu">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/"><span class="glyphicon glyphicon-book"></span> Manage Orders</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <header>
+            <div class="pull-right">
+                <dot:AuthenticatedView>
+                    <NotAuthenticatedTemplate>
+                        <dot:RouteLink RouteName="Login" Text="Sign In" />
+                    </NotAuthenticatedTemplate>
+                    <AuthenticatedTemplate>
+                        <dot:LinkButton Click="{command: Logout()}" Text="Sign Out" Validation.Enabled="false" />
+                    </AuthenticatedTemplate>
+                </dot:AuthenticatedView>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <dot:ContentPlaceHolder ID="MainContent" />
+    </div>
+    <dot:RequiredResource Name="site" />
+</body>
+</html>

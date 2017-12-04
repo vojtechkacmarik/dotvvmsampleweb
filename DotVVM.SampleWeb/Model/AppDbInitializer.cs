@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotVVM.SampleWeb.Model
 {
@@ -20,7 +21,7 @@ namespace DotVVM.SampleWeb.Model
 
         public async Task InitializeDatabaseAsync()
         {
-            dc.Database.EnsureCreated();
+            dc.Database.Migrate();
 
             await CreateUsers().ConfigureAwait(false);
             await CreateForumThreads().ConfigureAwait(false);

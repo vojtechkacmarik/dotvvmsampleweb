@@ -80,11 +80,15 @@ namespace DotVVM.SampleWeb
             services.Add(ServiceDescriptor.Scoped<AppDbInitializer, AppDbInitializer>());
             services.Add(ServiceDescriptor.Scoped<LoginService, LoginService>());
             services.Add(ServiceDescriptor.Scoped<ForumService, ForumService>());
+            services.AddScoped<OrderService>();
+            services.AddScoped<ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole();
+
             app.UseDotVVM<DotvvmStartup>(env.ContentRootPath);
 
             app.UseStaticFiles(new StaticFileOptions

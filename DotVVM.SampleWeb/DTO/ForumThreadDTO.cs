@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotVVM.SampleWeb.DTO
+namespace DotVVM.SampleWeb.Dto
 {
     public class ForumThreadDTO
     {

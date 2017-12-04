@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using DotVVM.Framework.Hosting;
-using DotVVM.SampleWeb.DTO;
+using DotVVM.SampleWeb.Dto;
 using DotVVM.SampleWeb.Services;
 
 namespace DotVVM.SampleWeb.ViewModels
