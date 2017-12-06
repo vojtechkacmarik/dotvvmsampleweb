@@ -1,0 +1,31 @@
+﻿@viewModel DotVVM.SampleWeb.Web.ViewModels.LayoutViewModel, DotVVM.SampleWeb.Web
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{{value: PageTitle}} | DotVVM Sample Web Application</title>
+    <link href="/all.min.css" rel="stylesheet" />
+</head>
+<body Validator.InvalidCssClass="has-error" Validator.SetToolTipText="true">
+    <div class="header-container">
+        <h1>DotVVM Sample Web Application</h1>
+        <dot:ContentPlaceHolder ID="MenuContent" />
+        <dot:AuthenticatedView>
+            <AuthenticatedTemplate>
+                <div class="signout-box">
+                    {{value: CurrentUserName}}
+                    |
+                    <dot:LinkButton Text="Sign Out" Click="{command: SignOut()}" Validation.Enabled="false" />
+                </div>
+            </AuthenticatedTemplate>
+        </dot:AuthenticatedView>
+    </div>
+
+    <div class="content-container">
+        <dot:ContentPlaceHolder ID="MainContent" />
+    </div>
+    <dot:MiniProfilerWidget Position="Right" ShowTrivial="true" StartHidden="true" />
+    <dot:ApplicationInsightsJavascript />
+</body>
+</html>

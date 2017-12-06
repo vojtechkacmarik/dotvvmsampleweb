@@ -1,0 +1,21 @@
+﻿-- Run these commands in Package Manager Console
+
+-- To add new migration snapshot:
+Add-Migration -Force -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web <SnapShotName>
+E.g.
+Add-Migration -Force -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web AddUserEntity
+
+-- To migrate database to target snapshot use command below.
+-- Migration to the latest database is done automatically when application starts.
+Update-Database -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web –TargetMigration: <SnapShotName>
+E.g.
+Update-Database -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web –TargetMigration: AddUserEntity
+
+-- To enable migration for project run command below. This is only initial command which has already been processed at the beginning.
+Enable-Migrations -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web
+
+-- If you just need to run Seed() again, and nothing has changed that would cause a new migration to be added, 
+-- just call Update-Database again with no flags and it will say 'No pending migrations', and run Seed() again for you. 
+-- Seed() is called every time the DB is updated, regardless if there are new migrations or not.
+-- https://stackoverflow.com/questions/28745676/run-code-first-migration-seed-method-without-a-migration
+Update-Database -ProjectName DotVVM.SampleWeb.DAL -StartUpProjectName DotVVM.SampleWeb.Web
