@@ -20,9 +20,9 @@ namespace DotVVM.SampleWeb.Web
         {
             if (IsDetailPage(file))
             {
-                return "admin/" + base.GetRouteUrl(file) + "/{Id?}";
+                return "Admin/" + base.GetRouteUrl(file) + "/{Id?}";
             }
-            return "admin/" + base.GetRouteUrl(file);
+            return "Admin/" + base.GetRouteUrl(file);
         }
 
         protected override object GetRouteDefaultParameters(RouteStrategyMarkupFileInfo file)

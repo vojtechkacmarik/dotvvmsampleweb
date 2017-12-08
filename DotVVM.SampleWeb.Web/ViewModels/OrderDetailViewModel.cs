@@ -73,7 +73,7 @@ namespace DotVVM.SampleWeb.Web.ViewModels
         public void SaveChanges()
         {
             orderService.SaveOrderDetail(EditedOrder);
-            Context.RedirectToRoute(Routes.ROUTE_NAME_DEFAULT2);
+            Context.RedirectToRoute(DotvvmRouteNames.ROUTE_NAME_DEFAULT2);
         }
     }
 }

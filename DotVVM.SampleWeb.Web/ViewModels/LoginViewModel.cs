@@ -26,7 +26,7 @@ namespace DotVVM.SampleWeb.Web.ViewModels
             if (principal != null)
             {
                 await Context.GetAuthentication().SignInAsync(AuthenticationConstants.AUTHENTICATION_TYPE_NAME, principal);
-                Context.RedirectToRoute(Routes.ROUTE_NAME_DEFAULT);
+                Context.RedirectToRoute(DotvvmRouteNames.ROUTE_NAME_DEFAULT);
             }
             else
             {

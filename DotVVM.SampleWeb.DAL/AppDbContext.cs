@@ -10,10 +10,6 @@ namespace DotVVM.SampleWeb.DAL
     {
         private readonly IConfiguration _configuration;
 
-        public AppDbContext()
-        {
-        }
-
         public AppDbContext(DbContextOptions options, IConfiguration configuration) : base(options)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));

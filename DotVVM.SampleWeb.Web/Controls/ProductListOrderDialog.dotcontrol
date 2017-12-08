@@ -1,11 +1,8 @@
-﻿@viewModel NorthwindStore.App.ViewModels.Admin.ProductListOrderDialog, NorthwindStore.App
-
+﻿@viewModel DotVVM.SampleWeb.Web.ViewModels.Admin.ProductListOrderDialog, DotVVM.SampleWeb.Web
 <bp:ModalDialog IsDisplayed="{value: IsDisplayed}" Validation.Target="{value: _this}">
     <HeaderTemplate>Order Items</HeaderTemplate>
     <ContentTemplate>
-
         <div class="form">
-
             <div class="form-field" Validator.Value="{value: OrderedQuantity}">
                 <label>Qty to Order</label>
                 <div>
@@ -13,7 +10,6 @@
                 </div>
             </div>
         </div>
-
     </ContentTemplate>
     <FooterTemplate>
         <bp:Button Text="Submit Order" Click="{command: SubmitOrder()}" />

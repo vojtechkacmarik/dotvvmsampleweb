@@ -21,7 +21,7 @@ namespace DotVVM.SampleWeb.Web.Installers
             container.Register(
 
                 Component.For<Func<AppDbContext>>()
-                    .Instance(() => new AppDbContext())
+                    .Instance(() => new AppDbContextFactory().Create())
                     .LifestyleSingleton(),
 
                 Component.For<IUnitOfWorkProvider>()

@@ -25,7 +25,7 @@ namespace DotVVM.SampleWeb.Web.ViewModels
         public async Task SignOut()
         {
             await Context.GetAuthentication().SignOutAsync(AuthenticationConstants.AUTHENTICATION_TYPE_NAME);
-            Context.RedirectToRoute(Routes.ROUTE_NAME_DEFAULT);
+            Context.RedirectToRoute(DotvvmRouteNames.ROUTE_NAME_DEFAULT);
         }
 
         protected int? GetUserId()

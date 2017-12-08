@@ -43,8 +43,8 @@ namespace DotVVM.SampleWeb.Web
         {
             services.AddOptions();
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.Configure<IConfiguration>(Configuration);
-            services.Configure<IConfigurationRoot>(Configuration);
+            services.AddSingleton(Configuration);
+            services.AddSingleton((IConfigurationRoot)Configuration);
 
             services.AddDataProtection();
             services.AddAuthorization();
@@ -93,7 +93,7 @@ namespace DotVVM.SampleWeb.Web
                     // Cookie settings
                     options.Cookie.HttpOnly = true;
                     options.Cookie.Expiration = TimeSpan.FromDays(150);
-                    options.LoginPath = new PathString("/"); // If the LoginPath is not set here, ASP.NET Core will default to /Account/Login
+                    options.LoginPath = new PathString("/Default3"); // If the LoginPath is not set here, ASP.NET Core will default to /Account/Login
                     options.LogoutPath = "/Account/Logout"; // If the LogoutPath is not set here, ASP.NET Core will default to /Account/Logout
                     options.AccessDeniedPath = "/Account/AccessDenied"; // If the AccessDeniedPath is not set here, ASP.NET Core will default to /Account/AccessDenied
                     options.SlidingExpiration = true;

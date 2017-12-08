@@ -26,8 +26,8 @@ namespace DotVVM.SampleWeb.Web
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
             config.RouteTable.Add("Default", "", "Views/default.dothtml");
-            config.RouteTable.Add(Routes.ROUTE_NAME_DEFAULT2, "default2", "Views/default2.dothtml");
-            config.RouteTable.Add(Routes.ROUTE_NAME_DEFAULT3, "Default3", "Views/Default3.dothtml");
+            config.RouteTable.Add(DotvvmRouteNames.ROUTE_NAME_DEFAULT2, "default2", "Views/default2.dothtml");
+            config.RouteTable.Add(DotvvmRouteNames.ROUTE_NAME_DEFAULT3, "Default3", "Views/Default3.dothtml");
             config.RouteTable.Add("Login", "login", "Views/login.dothtml");
             config.RouteTable.Add("Thread", "thread/{Id}", "Views/thread.dothtml");
             config.RouteTable.Add("OrderDetail", "order/{id?}", "Views/OrderDetail.dothtml");

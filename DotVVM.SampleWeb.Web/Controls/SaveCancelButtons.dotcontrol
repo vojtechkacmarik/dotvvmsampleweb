@@ -1,5 +1,4 @@
-﻿@viewModel NorthwindStore.App.ViewModels.Admin.Base.ISaveCancelViewModel, NorthwindStore.App
-
+﻿@viewModel DotVVM.SampleWeb.Web.ViewModels.Admin.Base.ISaveCancelViewModel, DotVVM.SampleWeb.Web
 <div class="toolbar">
     <bp:Button Click="{command: Save()}" ButtonTagName="button">
         <bp:FAIcon Icon="Save" /> Save Changes

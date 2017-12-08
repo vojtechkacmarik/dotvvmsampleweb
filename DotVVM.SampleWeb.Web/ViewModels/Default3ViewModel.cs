@@ -1,4 +1,5 @@
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DotVVM.BusinessPack.Controls;
 using DotVVM.Framework.Hosting;
@@ -31,8 +32,40 @@ namespace DotVVM.SampleWeb.Web.ViewModels
                 return;
             }
 
+            // CookieAuthenticationDefaults.AuthenticationScheme
             await Context.GetAuthentication().SignInAsync(AuthenticationConstants.AUTHENTICATION_TYPE_NAME, principal);
             Context.RedirectToRoute("Admin_RegionList");
+        }
+
+        public async Task LoginTask()
+        {
+            if (VerifyCredentials(Login.UserName, Login.Password))
+            {
+                // the CreateIdentity is your own method which creates the IIdentity representing the user
+                var identity = CreateIdentity(Login.UserName);
+                await Context.GetAuthentication().SignInAsync(AuthenticationConstants.AUTHENTICATION_TYPE_NAME, new ClaimsPrincipal(identity));
+                Context.RedirectToRoute("Default");
+            }
+        }
+
+        private bool VerifyCredentials(string username, string password)
+        {
+            // verify credentials and return true or false
+            return true;
+        }
+
+        private ClaimsIdentity CreateIdentity(string username)
+        {
+            var identity = new ClaimsIdentity(
+                new[]
+                {
+                    new Claim(ClaimTypes.Name, username),
+
+                    // add claims for each user role
+                    new Claim(ClaimTypes.Role, "administrator"),
+                },
+                AuthenticationConstants.AUTHENTICATION_TYPE_NAME);
+            return identity;
         }
     }
 }

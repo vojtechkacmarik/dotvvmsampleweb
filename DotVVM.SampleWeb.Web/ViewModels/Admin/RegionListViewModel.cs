@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using DotVVM.BusinessPack.Controls;
 using DotVVM.Framework.Controls;
 using DotVVM.SampleWeb.BL.DTO;
 using DotVVM.SampleWeb.BL.Facades.Admin;
@@ -13,7 +14,7 @@ namespace DotVVM.SampleWeb.Web.ViewModels.Admin
         {
             this.pageFacade = pageFacade;
 
-            Regions = new GridViewDataSet<RegionDTO>()
+            Regions = new BusinessPackDataSet<RegionDTO>()
             {
                 PagingOptions =
                 {

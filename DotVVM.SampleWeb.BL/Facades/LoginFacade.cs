@@ -28,6 +28,8 @@ namespace DotVVM.SampleWeb.BL.Facades
                         {
                             new Claim(ClaimTypes.Name, user.UserName),
                             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                            // add claims for each user role
+                            new Claim(ClaimTypes.Role, "administrator"),
                         },
                         AuthenticationConstants.AUTHENTICATION_TYPE_NAME));
                 }

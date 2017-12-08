@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using DotVVM.BusinessPack.Controls;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
 using DotVVM.SampleWeb.BL.Facades.Admin.Base;
@@ -20,13 +21,13 @@ namespace DotVVM.SampleWeb.Web.ViewModels.Admin.Base
         [Bind(Direction.None)]
         public abstract ISortingOptions DefaultSortOptions { get; }
 
-        public GridViewDataSet<TDTO> Items { get; set; }
+        public BusinessPackDataSet<TDTO> Items { get; set; }
 
         public TFilterDTO Filter { get; set; } = new TFilterDTO();
 
         public override Task Init()
         {
-            Items = new GridViewDataSet<TDTO>()
+            Items = new BusinessPackDataSet<TDTO>()
             {
                 PagingOptions =
                 {
